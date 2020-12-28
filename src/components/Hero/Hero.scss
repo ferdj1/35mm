@@ -1,0 +1,36 @@
+.hero {
+  padding-top: 75px;
+  background-image: url("/images/hero_bg_2.png");
+  background-size: cover;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__title {
+    font-family: 'Bungee Shade', Arial, sans-serif;
+    font-size: 4rem;
+    color: #ffffff;
+  }
+
+  &__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  &__button-container {
+    margin-top: 25px;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button-google {
+    color: #ffffff;
+  }
+}

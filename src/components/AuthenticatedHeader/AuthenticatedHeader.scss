@@ -1,0 +1,36 @@
+.header-info {
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__avatar-container {
+    margin-left: 18px;
+    cursor: pointer;
+  }
+
+  &__avatar {
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__arrow {
+    cursor: pointer;
+    margin-left: 10px;
+
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+}
