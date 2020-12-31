@@ -15,6 +15,8 @@ import {getCurrentUser} from "./apiClient/UserService";
 import UserContext from "./context/UserContext";
 
 import {ChakraProvider} from "@chakra-ui/react";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -53,17 +55,20 @@ function App() {
         loadCurrentlyLoggedInUser: loadCurrentlyLoggedInUser
       }}>
         <Header authenticated={authenticated} currentUser={currentUser} onLogout={handleLogout}/>
-        <Switch>
-          <Route exact path="/" render={(props) => <Homepage authenticated={authenticated} {...props} />}/>
-          <PrivateRoute path="/profile" authenticated={authenticated} currentUser={currentUser}
-                        component={Profile}/>
-          <Route path="/login"
-                 render={(props) => <Login authenticated={authenticated} {...props} />}/>
-          <Route path="/signup"
-                 render={(props) => <Signup authenticated={authenticated} {...props} />}/>
-          <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
-          <Route component={NotFound}/>
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/" render={(props) => <Homepage authenticated={authenticated} {...props} />}/>
+            <PrivateRoute path="/profile" authenticated={authenticated} currentUser={currentUser}
+                          component={Profile}/>
+            <Route path="/login"
+                   render={(props) => <Login authenticated={authenticated} {...props} />}/>
+            <Route path="/signup"
+                   render={(props) => <Signup authenticated={authenticated} {...props} />}/>
+            <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
+            <Route path="/movie/:id" render={props => <MovieDetails {...props}/>}/>
+            <Route component={NotFound}/>
+          </Switch>
+        </ScrollToTop>
       </UserContext.Provider>
     </ChakraProvider>
   )

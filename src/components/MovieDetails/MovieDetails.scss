@@ -1,0 +1,145 @@
+.movie-details {
+  &__body {
+    position: absolute;
+    background: #2D3748;
+    width: 100%;
+    height: 100vh + 30;
+    box-shadow: 0px -3px 14px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__hero-separator {
+    height: 60px;
+    background-image: linear-gradient(43deg, rgb(54, 41, 62) 0%, rgba(48, 27, 48, 0.8) 46%, rgb(44, 22, 53) 100%), url("/images/pattern_1.png");
+  }
+
+  &__poster-video-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__poster {
+    width: 300px;
+    height: 450px;
+    margin-right: 50px;
+    box-shadow: 0px -5px 18px 0px rgba(0, 0, 0, 0.5);
+
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__video {
+    box-shadow: 0px -5px 18px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__trailer-text {
+    writing-mode: vertical-rl;
+    z-index: 5;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 5px 0px 18px 0px rgba(0, 0, 0, 0.5);
+    background-color: #D69E2E;
+    color: rgba(0, 0, 0, 0.85);
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 450px;
+  }
+
+  &__overview-basic-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+
+  &__info-card {
+    color: #ffffff;
+    display: flex;
+    background: linear-gradient(180deg, rgba(17,17,19,1) 0%, rgba(32,26,32,1) 100%);
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 30px 30px;
+    position: relative;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  &__info-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #ffffff;
+    position: absolute;
+    top: -35px;
+    margin-bottom: 10px;
+  }
+
+  &__overview {
+    width: 30%;
+    padding-bottom: 70px;
+  }
+
+  &__overview-title {
+  }
+
+  &__basic-info {
+    width: 50%;
+  }
+
+  &__basic-info-title {
+    //right: 30px;
+  }
+
+  &__basic-info-text {
+    font-size: 1.2rem;
+    margin-right: 30px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+
+  &__basic-info-key {
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8)
+  }
+
+  &__basic-info-value {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  &__basic-info-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #3b305f;
+  }
+}

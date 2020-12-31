@@ -1,0 +1,106 @@
+.details-hero {
+  padding-top: 75px;
+  background-size: cover;
+  backdrop-filter: blur(100px);
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 30px;
+  position: relative;
+  box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.5);
+
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-top: 100px;
+  }
+
+  &__genres {
+    margin-bottom: 8px;
+  }
+
+  &__genre {
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: bold;
+
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+  }
+
+  &__button-container {
+    margin-top: 25px;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button-google {
+    color: #ffffff;
+  }
+
+  &__ratings {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  &__rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__rating-separator {
+    width: 1px;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  &__rating-icon {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    font-size: 1rem;
+    padding-right: 20px;
+    font-weight: bold;
+  }
+
+  &__rating-text {
+  }
+
+  &__rating-value {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  &__rating-max {
+    font-size: 1.5rem;
+  }
+}

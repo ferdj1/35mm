@@ -25,7 +25,7 @@ const request = (options) => {
 
 export function getMovies() {
   return request({
-    url: API_BASE_URL + "/movie/all?size=10",
+    url: API_BASE_URL + "/movie/all?size=20",
     method: 'GET'
   });
 }

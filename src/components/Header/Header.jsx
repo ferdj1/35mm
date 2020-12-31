@@ -20,7 +20,7 @@ function Header(props) {
   }
 
   return (
-    <div className={location.pathname === "/" && yOffset < 60
+    <div className={(location.pathname === "/" || location.pathname.startsWith("/movie/")) && yOffset < 60
       ? "header header--transparent"
       : "header header--solid"
     }>
