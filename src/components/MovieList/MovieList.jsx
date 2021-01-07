@@ -11,18 +11,18 @@ function MovieList(props) {
   return (
     <div className="movie-list">
       <h3 className="movie-list__title">
-        Popular Movies
+        {props.title}
       </h3>
-      <Wrap className="movie-list__cards" spacing="30px" justify="center">
-        {props.movies.map((movie, i) =>
-          <WrapItem>
-            <NavLink to={{
-              pathname: `/movie/${movie.id}`,
-              state: {movie: movie}
-            }}><MovieCard key={i} movie={movie}/>
-            </NavLink>
-          </WrapItem>)}
-      </Wrap>
+      { props.movies.length === 0 ?
+        <div className="movie-list__empty-message"><span>{props.emptyText}</span></div>
+        :
+        <Wrap className="movie-list__cards" spacing="30px" justify="center">
+          {props.movies.map((movie, i) =>
+            <WrapItem>
+              <MovieCard authenticated={props.authenticated} key={i} movie={movie} setDisplayRefreshRecommendations={props.setDisplayRefreshRecommendations}/>
+            </WrapItem>)}
+        </Wrap>
+      }
     </div>
   )
 }

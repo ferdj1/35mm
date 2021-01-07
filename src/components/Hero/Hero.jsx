@@ -1,7 +1,7 @@
 import * as React from "react"
 import {NavLink} from "react-router-dom";
 
-import {Button} from "@chakra-ui/react";
+import {Button, Input} from "@chakra-ui/react";
 import {AiOutlineLogin, AiOutlineUser} from "react-icons/ai";
 import {Fade} from "@chakra-ui/transition";
 
@@ -11,7 +11,7 @@ function Hero(props) {
   return (
     <div className="hero">
       <h1 className="hero__title">35mm</h1>
-      <h3 className="hero__subtitle">Find movies and TV shows based on your taste</h3>
+      <h3 className="hero__subtitle">Scroll through top rated movies and discover more movies based on your taste</h3>
       {!props.authenticated && <Fade in>
         <div className="hero__button-container">
           <NavLink to="/login">

@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.5);
 
   &__title {
     font-family: 'Bungee Shade', Arial, sans-serif;
@@ -19,9 +18,9 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 2.2rem;
     color: #ffffff;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
   }
 
   &__button-container {
@@ -32,6 +31,15 @@
   }
 
   &__button-google {
+    color: #ffffff;
+  }
+
+  &__search {
+    margin-top: 30px;
+    max-width: 500px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem !important;
+    text-align: center;
     color: #ffffff;
   }
 }

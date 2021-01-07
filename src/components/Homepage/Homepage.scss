@@ -1,4 +1,47 @@
 .homepage {
   background: #2D3748;
   height: 100%;
+
+  &__hero-separator {
+    height: 100px;
+    background-image: linear-gradient(43deg, rgb(67, 31, 98) 0%, rgba(78, 17, 78, 0.8) 46%, rgb(56, 16, 74) 100%), url("/images/pattern_1.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 5;
+    box-shadow: 0px -5px 18px 0px rgba(0, 0, 0, 0.4), 0px 5px 14px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  &__refresh-recommendations {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    border-radius: 100px;
+    background-color: #331e67;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      background-color: #2EE59D;
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      cursor: pointer;
+      transform: translateY(-7px);
+    }
+  }
+
+  &__refresh-recommendations-icon {
+    color: #ffffff;
+    transition: all 0.3s ease 0s;
+
+    :hover > & {
+      color: #ffffff;
+    }
+  }
+
+  &__body {
+    background: #2D3748;
+  }
 }

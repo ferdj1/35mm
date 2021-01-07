@@ -79,44 +79,6 @@
     margin-top: 50px;
   }
 
-  &__info-card {
-    color: #ffffff;
-    display: flex;
-    background: linear-gradient(180deg, rgba(17,17,19,1) 0%, rgba(32,26,32,1) 100%);
-    border-radius: 8px;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 30px 30px;
-    position: relative;
-    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
-  }
-
-  &__info-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 3rem;
-    color: #ffffff;
-    position: absolute;
-    top: -35px;
-    margin-bottom: 10px;
-  }
-
-  &__overview {
-    width: 30%;
-    padding-bottom: 70px;
-  }
-
-  &__overview-title {
-  }
-
-  &__basic-info {
-    width: 50%;
-  }
-
-  &__basic-info-title {
-    //right: 30px;
-  }
-
   &__basic-info-text {
     font-size: 1.2rem;
     margin-right: 30px;

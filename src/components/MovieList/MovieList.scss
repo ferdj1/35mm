@@ -1,7 +1,18 @@
 .movie-list {
   padding-left: 100px;
   padding-right: 100px;
-  margin-top: 30px;
+  padding-top: 30px;
+
+  &__empty-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #5d6b85;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 20px;
+  }
 
   &__title {
     font-family: 'Montserrat', sans-serif;
