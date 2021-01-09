@@ -22,10 +22,13 @@ function MovieDetails(props) {
   const [movie, setMovie] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
+  const [actors, setActors] = useState("");
+
   useEffect(() => {
     getMovieById(id).then(r => {
       setMovie(r);
       setLoaded(true);
+      setActors(r.actors.join(', '));
     });
   }, [id]);
 
@@ -45,7 +48,7 @@ function MovieDetails(props) {
                   Trailer
                 </div>
                 <iframe width="600" height="450"
-                        src="https://www.youtube.com/embed/5xH0HfJHsaY">
+                        src={"https://www.youtube.com/embed/" + movie.youtubeKey}>
                 </iframe>
               </div>
             </div>
@@ -62,6 +65,11 @@ function MovieDetails(props) {
                   <div className="movie-details__basic-info-text">
                     <span className="movie-details__basic-info-key">Runtime</span>
                     <span className="movie-details__basic-info-value">{movie.runtime} minutes</span>
+                  </div>
+                  <div className="movie-details__basic-info-divider"/>
+                  <div className="movie-details__basic-info-text">
+                    <span className="movie-details__basic-info-key">Actors</span>
+                    <div className="movie-details__basic-info-value">{actors}</div>
                   </div>
                 </Wrap>
               }/>
