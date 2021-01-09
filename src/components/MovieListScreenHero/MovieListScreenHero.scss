@@ -1,0 +1,19 @@
+.movie-list-screen-hero {
+  background-image: url("/images/top_bg.png");
+  background-size: cover;
+  background-position-y: -100px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+}

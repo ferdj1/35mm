@@ -43,5 +43,9 @@
 
   &__body {
     background: #2D3748;
+
+    & > div:not(:last-child) {
+      margin-bottom: 120px;
+    }
   }
 }

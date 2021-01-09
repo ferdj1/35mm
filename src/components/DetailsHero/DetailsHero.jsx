@@ -9,6 +9,7 @@ import {IconButton, Box, HStack, useToast} from "@chakra-ui/react";
 import "./DetailsHero.scss";
 import {useEffect, useState} from "react";
 import {checkLikedMovieById, dislikeMovieById, likeMovieById} from "../../apiClient/MovieService";
+import {isLoggedIn} from "../../util/AuthUtil";
 
 function DetailsHero(props) {
   const location = useLocation()
@@ -19,17 +20,19 @@ function DetailsHero(props) {
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
-    checkLikedMovieById(movieBasic.id).then(res => {
-      setLiked(res);
-    }).catch(error => {
-      toast({
-        title: "Error",
-        description: (error && error.error) || 'Oops! Something went wrong. Please try again!',
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-      })
-    });
+    if (isLoggedIn()) {
+      checkLikedMovieById(movieBasic.id).then(res => {
+        setLiked(res);
+      }).catch(error => {
+        toast({
+          title: "Error",
+          description: (error && error.error) || 'Oops! Something went wrong. Please try again!',
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        })
+      });
+    }
   }, []);
 
 
@@ -83,7 +86,7 @@ function DetailsHero(props) {
           <div className="details-hero__rating-text"><span className="details-hero__rating-value">{props.movie.ratings[2] ? props.movie.ratings[2].value.split("/")[0] : "?"}</span><span className="details-hero__rating-max"> / 100</span></div>
         </div>
       </div>
-      {!liked ?
+      {isLoggedIn() && (!liked ?
         <div className=" details-hero__like" onClick={likeMovie}>
           <RiHeartLine className="details-hero__like-icon" size={"40px"}/>
         </div>
@@ -91,7 +94,7 @@ function DetailsHero(props) {
         <div className=" details-hero__like-selected" onClick={dislikeMovie}>
           <RiHeartFill className="details-hero__like-icon-selected" size={"40px"}/>
         </div>
-      }
+      )}
     </Box>
   )
 }

@@ -1,0 +1,19 @@
+.select-button {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  padding: 5px 12px;
+  background: #ffffff;
+  border-radius: 20px;
+
+  transition: all 0.2s;
+  &:hover {
+    background: #dddddd;
+    cursor: pointer;
+  }
+
+  &__text {
+    margin-left: 8px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,182 @@
+.like-timeline-card {
+  width: 960px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+
+  &__box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    background: #191721;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0px -5px 18px 0px rgb(33, 33, 40);
+    position: relative;
+  }
+
+
+  &__image {
+    box-shadow: 0px -5px 18px 0px rgb(33, 33, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 30px;
+    height: 300px;
+    width: auto;
+    min-width: 200px;
+
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:after {
+      content: '\A';
+      position: absolute;
+      width: 100%; height:100%;
+      top:0; left:0;
+      background: linear-gradient(180deg, rgba(17,17,19,0.8) 0%, rgba(59, 35, 59, 0.8) 100%);
+      opacity: 0;
+      transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+    }
+
+    img {
+      flex-shrink: 0;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+      color: #A0AEC0;
+    }
+  }
+
+  &__year {
+    color: #b6b4b7;
+    font-size: 1.1rem;
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  &__rating-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-left: 5px;
+  }
+
+  &__basic-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+
+  &__genres {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  &__genre {
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: bold;
+
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__like {
+    position: absolute;
+    z-index: 25;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 100px;
+    background-color: #331e67;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      background-color: #2EE59D;
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      cursor: pointer;
+      transform: translateY(-7px);
+    }
+  }
+
+  &__like-icon {
+    color: #ffffff;
+    transition: all 0.3s ease 0s;
+
+    :hover > & {
+      color: #ffffff;
+    }
+  }
+
+  &__like-selected {
+    position: absolute;
+    z-index: 25;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 100px;
+    background-color: #331e67;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      box-shadow: 0px 15px 20px rgba(171, 138, 131, 0.2) inset;
+      cursor: pointer;
+      transform: translateY(4px);
+    }
+  }
+
+  &__like-icon-selected {
+    color: #ffffff;
+    transition: all 0.3s ease 0s;
+
+    :hover > & {
+      color: #ffffff;
+    }
+  }
+
+  &__info {
+    position: relative;
+  }
+
+  &__time {
+    color: #7a7a7a;
+  }
+
+}

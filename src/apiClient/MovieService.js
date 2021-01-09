@@ -60,17 +60,28 @@ export function getRecommendedMovies() {
   });
 }
 
-export function getGenreBasedMovies(req) {
+export function getGenreBasedMovies(genres) {
+  const req = {
+    genres: genres
+  };
+
   return request({
-    url: API_BASE_URL + "/movie/recommendation/me",
-    data: req,
-    method: 'GET'
+    url: API_BASE_URL + "/movie/genres",
+    body: JSON.stringify(req),
+    method: 'POST'
   });
 }
 
 export function getMovieById(id) {
   return request({
     url: API_BASE_URL + "/movie/" + id,
+    method: 'GET'
+  });
+}
+
+export function getLikedMovies() {
+  return request({
+    url: API_BASE_URL + "/movie/liked",
     method: 'GET'
   });
 }

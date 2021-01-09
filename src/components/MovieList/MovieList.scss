@@ -14,12 +14,33 @@
     margin-top: 20px;
   }
 
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
   &__title {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #ffffff;
     margin-left: 100px;
+  }
+
+  &__see-all {
+    margin-left: 25px;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: all 0.2s;
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
   }
 
   &__cards {

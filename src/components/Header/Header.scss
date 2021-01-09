@@ -3,7 +3,7 @@
   width: 100%;
   background: #322659;
   height: 64px;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,6 +28,17 @@
     transition: font-size 0.15s;
     &:hover {
       font-size: 1.9rem;
+    }
+  }
+
+  &__auth-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1.5rem;
+
+    &__signup {
+      margin-left: 20px;
     }
   }
 }

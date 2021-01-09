@@ -10,6 +10,7 @@ import {RiHeartFill, RiHeartLine} from "react-icons/all";
 import {useToast} from "@chakra-ui/react";
 import {checkLikedMovieById, dislikeMovieById, likeMovieById} from "../../apiClient/MovieService";
 import {NavLink} from "react-router-dom";
+import {isLoggedIn} from "../../util/AuthUtil";
 
 function MovieCard(props) {
   const toast = useToast();
@@ -30,7 +31,7 @@ function MovieCard(props) {
         })
       });
     }
-  }, []);
+  }, [props.movie.id]);
 
   function likeMovie() {
     if (props.authenticated) {
@@ -43,7 +44,7 @@ function MovieCard(props) {
           })
           setLiked(true);
 
-          props.setDisplayRefreshRecommendations(true);
+          props.setDisplayRefreshRecommendations && props.setDisplayRefreshRecommendations(true);
         }
       });
     }
@@ -60,7 +61,7 @@ function MovieCard(props) {
           })
           setLiked(false);
 
-          props.setDisplayRefreshRecommendations(true);
+          props.setDisplayRefreshRecommendations && props.setDisplayRefreshRecommendations(true);
         }
       });
     }
@@ -77,7 +78,7 @@ function MovieCard(props) {
             <img src={TMDB_BASE_POSTER_URL + props.movie.posterPath} alt="poster"/>
           </div>
         </NavLink>
-        {!liked ?
+        {isLoggedIn() && (!liked ?
           <div className="movie-card__like" onClick={likeMovie}>
             <RiHeartLine className="movie-card__like-icon" size={"20px"}/>
           </div>
@@ -85,7 +86,7 @@ function MovieCard(props) {
           <div className="movie-card__like-selected" onClick={dislikeMovie}>
             <RiHeartFill className="movie-card__like-icon-selected" size={"20px"}/>
           </div>
-        }
+        )}
       </div>
 
       <div className="movie-card__info">
