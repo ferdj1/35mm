@@ -134,6 +134,10 @@ function App() {
             <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
             <Route path="/movie/recommendations" render={props => <MovieListScreen {...props}/>}/>
             <Route path="/movie/genre-based" render={props => <MovieListScreen {...props}/>}/>
+            <Route path="/movie/popular/daily" render={props => <MovieListScreen {...props}/>}/>
+            <Route path="/movie/popular/weekly" render={props => <MovieListScreen {...props}/>}/>
+            <Route path="/movie/popular/monthly" render={props => <MovieListScreen {...props}/>}/>
+            <Route path="/movie/popular/all-time" render={props => <MovieListScreen {...props}/>}/>
             <Route path="/movie/top" render={props => <MovieListScreen {...props}/>}/>
             <Route path="/movie/:id" render={props => <MovieDetails {...props}/>}/>
             <Route component={NotFound}/>

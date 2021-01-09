@@ -17,7 +17,13 @@ function MovieList(props) {
       <div className="movie-list__header">
         {!props.disableTitle &&
         <div className="movie-list__title">
-          {props.title ? props.title : ""}
+          <div className="movie-list__title-text">
+            {props.title ? props.title : ""}
+          </div>
+          {props.selector && <div className="movie-list__selector">
+            {props.selector}
+          </div>
+          }
         </div>
         }
         {!(props.movies.length === 0 || disableSeeAll) &&

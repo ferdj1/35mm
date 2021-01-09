@@ -41,14 +41,14 @@ const requestOKCheck = (options) => {
 
 export function getTopRatedMovies() {
   return request({
-    url: API_BASE_URL + "/movie/top?size=20",
+    url: API_BASE_URL + "/movie/top?size=200",
     method: 'GET'
   });
 }
 
 export function searchTopRatedMovies(title) {
   return request({
-    url: API_BASE_URL + "/movie/top?size=20&search=" + title,
+    url: API_BASE_URL + "/movie/top?size=200&search=" + title,
     method: 'GET'
   });
 }
@@ -104,5 +104,36 @@ export function checkLikedMovieById(id) {
   return request({
     url: API_BASE_URL + "/movie/" + id + "/liked",
     method: "GET"
+  });
+}
+
+export function getDailyPopular() {
+  return request({
+    url: API_BASE_URL + "/movie/popular/day",
+    method: 'GET'
+  });
+}
+
+
+export function getWeeklyPopular() {
+  return request({
+    url: API_BASE_URL + "/movie/popular/weekly",
+    method: 'GET'
+  });
+}
+
+
+export function getMonthlyPopular() {
+  return request({
+    url: API_BASE_URL + "/movie/popular/monthly",
+    method: 'GET'
+  });
+}
+
+
+export function getAllTimePopular() {
+  return request({
+    url: API_BASE_URL + "/movie/popular/alltime",
+    method: 'GET'
   });
 }
